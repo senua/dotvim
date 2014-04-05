@@ -15,7 +15,8 @@ Plugin 'gmarik/vundle'
 Plugin 'Raimondi/delimitMate'
 Plugin 'basilgor/vim-autotags'
 Plugin 'tpope/vim-markdown'
-Plugin 'tomasr/molokai'
+Plugin 'steffanc/cscopemaps.vim'
+"Plugin 'tomasr/molokai'
 
 """" END VUNDLE
 
@@ -25,6 +26,8 @@ set omnifunc=syntaxcomplete#Complete "syntax auto complete C-x C-o
 syntax on
 
 set hlsearch
+set incsearch
+set hidden
 
 set tabstop=2
 set softtabstop=2
@@ -33,16 +36,18 @@ set expandtab
 set shiftwidth=2
 set autoindent
 
+autocmd BufNewFile,BufRead /vz/src/* set noexpandtab
 
 set wildmenu "visual command autocomplete
 
 let g:markdown_fenced_languages = ['c', 'cpp', 'sh', 'javascript', 'js=javascript', 'python', 'ruby']
 
+highligh Comment ctermfg=darkgray
 "let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
-set background=dark
-set t_Co=256
+"let g:rehash256 = 1
+"colorscheme molokai
+"set background=dark
+"set t_Co=256
 
 
 let delimitMate_expand_cr = 1
